@@ -25,6 +25,7 @@ dependencies[] = file
 dependencies[] = rdf
 # CUSTOM 
 dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
 dependencies[] = devel_themer
 dependencies[] = module_filter
 dependencies[] = ctools
@@ -41,6 +42,6 @@ dependencies[] = rules
 dependencies[] = jquery_update
 dependencies[] = views
 dependencies[] = xmlsitemap
-dependencies[] = simplehtmldom
-dependencies[] = devel_themer
+#dependencies[] = simplehtmldom
+#dependencies[] = devel_themer
 
