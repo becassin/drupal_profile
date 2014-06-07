@@ -37,7 +37,6 @@ dependencies[] = link
 dependencies[] = backup_migrate
 dependencies[] = entity
 dependencies[] = entityreference
-dependencies[] = jquery_ui
 dependencies[] = panels
 dependencies[] = rules
 dependencies[] = jquery_update
