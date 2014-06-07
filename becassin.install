@@ -4,9 +4,11 @@
  *
  * Perform actions to set up the site for this profile.
  */
+error_log("message4");
 function becassin_install() {
+  error_log("message3");
   // Add text formats.
-  $filtered_html_format = array(
+  /*$filtered_html_format = array(
     'format' => 'filtered_html',
     'name' => 'Filtered HTML',
     'weight' => 0,
@@ -426,8 +428,10 @@ function becassin_install() {
   // Enable the admin theme.
   db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven')->execute();
   variable_set('admin_theme', 'seven');
-  variable_set('node_admin_theme', '1');
+  variable_set('node_admin_theme', '1');*/
 
+  error_log("message");
   variable_set('jquery_update_jquery_admin_version', '1.5');
+  error_log("message2");
 }
 ?>
