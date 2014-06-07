@@ -24,7 +24,6 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 # CUSTOM 
-dependencies[] = module_filter
 dependencies[] = ctools
 dependencies[] = context
 dependencies[] = date
@@ -39,8 +38,9 @@ dependencies[] = rules
 dependencies[] = jquery_update
 dependencies[] = views
 dependencies[] = xmlsitemap
-#dependencies[] = simplehtmldom
-#dependencies[] = devel_themer
+dependencies[] = simplehtmldom
+dependencies[] = devel_themer
 dependencies[] = admin_menu
 #dependencies[] = admin_menu_toolbar
+dependencies[] = module_filter
 
