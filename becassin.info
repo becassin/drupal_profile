@@ -25,7 +25,6 @@ dependencies[] = file
 dependencies[] = rdf
 # CUSTOM 
 dependencies[] = admin_menu
-dependencies[] = admin_menu_toolbar
 dependencies[] = devel_themer
 dependencies[] = module_filter
 dependencies[] = ctools
