@@ -434,4 +434,11 @@ function becassin_install() {
   variable_set('jquery_update_jquery_admin_version', '1.5');
   error_log("message2");
 }
+
+
+function function_to_execute2(){
+  error_log(422);
+}
+
+
 ?>
