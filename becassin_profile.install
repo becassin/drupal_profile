@@ -16,7 +16,7 @@ function becassin_profile_install() {
   // Any themes without keys here will get numeric keys and so will be enabled,
   // but not placed into variables.
   $enable = array(
-    'theme_default' => 'boilerplate',
+    'theme_default' => 'becassin_theme',
     'admin_theme' => 'seven',
     //'zen'
   );
