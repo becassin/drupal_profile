@@ -3,22 +3,19 @@
  * Implement hook_install().
  *
  * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
  */
 function becassin_profile_install() {
-  include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
-  minimal_install();
+  //include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
+  //minimal_install();  // Enable some standard blocks.
 
-  // Downgrade admin jquery to 1.5 
-  variable_set('jquery_update_jquery_admin_version', '1.5');
 
-  // Change themes
-
-  // Any themes without keys here will get numeric keys and so will be enabled,
-  // but not placed into variables.
+  // CHANGE THEMES
+  // Any themes without keys here will get numeric keys and so will be enabled, but not placed into variables.
   $enable = array(
     'theme_default' => 'becassin_theme',
     'admin_theme' => 'seven',
-    //'zen'
   );
   theme_enable($enable);
 
@@ -27,8 +24,57 @@ function becassin_profile_install() {
       variable_set($var, $theme);
     }
   }
-
-  // Disable the default Bartik theme
   theme_disable(array('bartik'));
+
+
+  $default_theme = variable_get('theme_default', 'becassin_theme');
+  $values = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'sidebar_first',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'navigation',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'header',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+
+  // Allow visitor account creation, but with administrative approval.
+  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+
+  // Enable default permissions for system roles.
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+
+  // Downgrade jQuery update admin
+  variable_set('jquery_update_jquery_admin_version', '1.5');
+
 }
 ?>
