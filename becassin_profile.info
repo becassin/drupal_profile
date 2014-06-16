@@ -44,4 +44,5 @@ dependencies[] = devel_themer
 dependencies[] = admin_menu
 #dependencies[] = admin_menu_toolbar
 dependencies[] = module_filter
+dependencies[] = becassin_module
 
