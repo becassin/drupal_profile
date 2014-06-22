@@ -7,7 +7,7 @@
  * @see system_install()
  */
 function becassin_profile_install() {
-  //include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
+/*  //include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
   //minimal_install();  // Enable some standard blocks.
 
 
@@ -159,6 +159,6 @@ function becassin_profile_install() {
 
   // Downgrade jQuery update admin
   variable_set('jquery_update_jquery_admin_version', '1.5');
-
+*/
 }
 ?>
