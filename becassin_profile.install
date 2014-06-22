@@ -7,7 +7,7 @@
  * @see system_install()
  */
 function becassin_profile_install() {
-/*  //include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
+  //include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
   //minimal_install();  // Enable some standard blocks.
 
 
@@ -139,9 +139,8 @@ function becassin_profile_install() {
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
   // Enable default permissions for system roles.
-  $filtered_html_permission = filter_permission_name($filtered_html_format);
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $filtered_html_permission));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval', $filtered_html_permission));
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval'));
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
@@ -159,6 +158,6 @@ function becassin_profile_install() {
 
   // Downgrade jQuery update admin
   variable_set('jquery_update_jquery_admin_version', '1.5');
-*/
+
 }
 ?>
